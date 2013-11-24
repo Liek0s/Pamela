@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 ** 
 ** Started on  Tue Nov 19 13:46:08 2013 Jack
-** Last update Fri Nov 22 23:52:36 2013 Jack
+** Last update Sun Nov 24 19:46:07 2013 Jack
 */
 
 #include	<sys/stat.h>
@@ -14,22 +14,6 @@
 #include	<stropts.h>
 
 #include	"pamela.h"
-
-size_t		count_digits(int n)
-{
-  size_t	count;
-
-  if (n == 0)
-    return (1);
-  else {
-    count = 0;
-    while (n != 0) {
-      n /= 10;
-      ++count;
-    }
-    return (count);
-  }
-}
 
 static
 char		*get_loop_device_str(const int loopdev_nb)

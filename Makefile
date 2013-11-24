@@ -5,13 +5,12 @@
 ## Login   <jack@epitech.net>
 ## 
 ## Started on  Thu Oct 31 13:31:42 2013 Jack
-## Last update Sun Nov 24 13:33:43 2013 Jack
+## Last update Sun Nov 24 19:51:40 2013 Jack
 ##
 
 NAME		=	pamela_mount.so
 
 GCC		=	gcc
-LD		=	ld
 RM		=	rm -f
 
 CFLAGS		+=	-Wall -Wextra -Werror
@@ -36,14 +35,16 @@ SRCS		=	$(SRCDIR)pamela.c		\
 			$(SRCDIR)rd_user_config.c	\
 			$(SRCDIR)loop.c			\
 			$(SRCDIR)crypt.c		\
-			$(SRCDIR)mount.c
+			$(SRCDIR)mount.c		\
+			$(SRCDIR)cleanup.c		\
+			$(SRCDIR)misc.c
 
 OBJS		=	$(SRCS:%.c=%.o)
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-			$(LD) -x --shared -o $(NAME) $(OBJS) $(LIB)
+			$(GCC) -shared -o $(NAME) $(OBJS) $(LIB)
 
 clean:
 			$(RM) $(OBJS)

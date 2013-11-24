@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 ** 
 ** Started on  Wed Nov 20 11:52:52 2013 Jack
-** Last update Sun Nov 24 13:33:05 2013 Jack
+** Last update Sun Nov 24 19:46:24 2013 Jack
 */
 
 #ifndef		__PAMELA_H__
@@ -73,10 +73,13 @@ int		close_luks_device(t_user *);
 int		mount_volume(t_user *);
 int		unmount_volume(t_user *);
 
+int		cleanup(t_user *);
 void		clean_user_session_data(t_user *);
 
 size_t		pamela_log(const char *, ...);
 size_t		count_digits(int);
+int		is_root(void);
+
 
 #endif		/* ! __PAMELA_H__ */
 
