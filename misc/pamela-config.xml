@@ -3,14 +3,16 @@
 <pamela>
 
   <user username="jack">
-    <container>./misc/jack-21112013.img</container>
-    <mountpoint>./misc/home/</mountpoint>
-    <keyfile>./misc/jack-kf.key</keyfile>
+    <container>/root/user-containers/jack-24112013.img</container>
+    <mountpoint>/home/</mountpoint>
+    <keyfile>/root/user-containers/.keyfiles/jack.key</keyfile>
     <fstype>ext4</fstype>
-    <mountopts/>
   </user>
 
   <user username="jill">
-    <mountpoint/>
+    <container>/root/user-containers/jill-24112013.img</container>
+    <mountpoint>/home/</mountpoint>
+    <keyfile>/root/user-containers/.keyfiles/jill.key</keyfile>
+    <fstype>ext4</fstype>
   </user>
 </pamela>

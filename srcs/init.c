@@ -28,9 +28,11 @@ int		init_user_data(pam_handle_t *pamh, t_user **userSession)
     free(session);
     return (pamela_log("Failed to retrieve username.\n"));
   }
-  if (read_config(g_sessionInfo.configFile, &session) != 0) {
-    clean_user_session_data(session);
-    return (ERROR);
+  if (strncmp(session->username, "root", strlen("root"))!= 0) {
+    if (read_config(g_sessionInfo.configFile, &session) != 0) {
+      clean_user_session_data(session);
+      return (ERROR);
+    }
   }
   *userSession = session;
   return (SUCCESS);

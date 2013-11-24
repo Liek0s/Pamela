@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 xml_output() {
 
@@ -23,8 +23,7 @@ cleanup() {
 generate_keyfile() {
     
     local inputfile="/dev/urandom"
-    # local outfilepath="/root/user-containers/.keyfiles/"
-    local outfilepath="./"
+    local outfilepath="/root/user-containers/.keyfiles/"
     local outfile=$outfilepath"$username.key"
 
     echo -e "Generating keyfile ..." >&2
@@ -55,12 +54,11 @@ attach_loop_device() {
 create_container() {
     
     local inputfile="/dev/urandom"
-    # outfilepath="/root/user-containers/"
-    local outfilepath="./"
+    local outfilepath="/root/user-containers/"
     local outfile=$outfilepath"$username-$(date +'%d%m%Y').img"    
 
     echo -e "Generating container...\nPlease wait, this may take a while depending on the size ..." >&2
-    dd if=$inputfile of=$outfile count=$size >&/dev/null
+    dd if=$inputfile of=$outfile bs=1024 count=$size 
     echo -e "Container of $size was created at $outfile!" >&2
     echo $outfile
 }
