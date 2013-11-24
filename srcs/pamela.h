@@ -5,7 +5,7 @@
 ** Login   <jack@epitech.net>
 ** 
 ** Started on  Wed Nov 20 11:52:52 2013 Jack
-** Last update Sat Nov 23 01:38:49 2013 Jack
+** Last update Sun Nov 24 13:33:05 2013 Jack
 */
 
 #ifndef		__PAMELA_H__
@@ -58,6 +58,8 @@ struct		globalConf {
 };
 
 extern struct	globalConf	g_sessionInfo;
+
+int		init_session_info(pam_handle_t *, int, int, const char **);
 
 int		read_config(const char *, t_user **);
 int		read_user_config(xmlDocPtr, xmlNodePtr, t_user **);

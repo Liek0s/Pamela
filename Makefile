@@ -5,7 +5,7 @@
 ## Login   <jack@epitech.net>
 ## 
 ## Started on  Thu Oct 31 13:31:42 2013 Jack
-## Last update Sat Nov 23 02:04:33 2013 Jack
+## Last update Sun Nov 24 13:33:43 2013 Jack
 ##
 
 NAME		=	pamela_mount.so
@@ -30,6 +30,7 @@ DEBUG		=	-g3
 SRCDIR		=	srcs/
 
 SRCS		=	$(SRCDIR)pamela.c		\
+			$(SRCDIR)init.c			\
 			$(SRCDIR)log.c			\
 			$(SRCDIR)rd_config.c		\
 			$(SRCDIR)rd_user_config.c	\
